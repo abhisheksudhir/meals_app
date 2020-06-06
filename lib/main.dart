@@ -33,11 +33,31 @@ class MyApp extends StatelessWidget {
       //home points at the widget which should be loaded as first screen in your app
       //it marks the entry point or root screen of your app
       // home: CategoriesScreen(),
-      initialRoute: '/',  // default is '/'
+      initialRoute: '/', // default is '/'
       routes: {
-        '/' : (ctx) => CategoriesScreen(),
+        '/': (ctx) => CategoriesScreen(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+      },
+      // to be used when you have routes being set dynamically
+      onGenerateRoute: (settings) {
+        print(settings.arguments);
+        // if(settings.name == '/meal-detail') {
+        //   return ...;
+        // }
+        // else if(settings.name == '/something else') {
+        //   return ...;
+        // }
+        // return MaterialPageRoute(
+        //   builder: (ctx) => CategoriesScreen(),
+        // );
+      },
+      // incase the routes specified is not enough(instead of error goes to this page)
+      onUnknownRoute: (settings) {
+        print(settings.arguments);
+        return MaterialPageRoute(
+          builder: (ctx) => CategoriesScreen(),
+        );
       },
     );
   }
