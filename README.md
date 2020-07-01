@@ -1,6 +1,15 @@
 # meals_app
 
-A new Flutter project.
+A app which provides you with various categories of meals and how to prepare meals of different categories.
+Also a filter for vegetarians, vegans, etc.
+You can also mark some as favorites which will be shown in the favotites screen.
+
+## Screenshots
+![](images/1.PNG)
+![](images/2.PNG)
+![](images/3.PNG)
+![](images/4.PNG)
+![](images/5.PNG)
 
 ## Getting Started
 
